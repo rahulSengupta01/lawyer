@@ -62,10 +62,10 @@ const ExperienceSection = () => {
     >
       {/* Mobile background image */}
       <div
+        className="mobile-bg"
         style={{
           display: "none",
         }}
-        className="mobile-bg"
       ></div>
 
       <style>
@@ -88,10 +88,11 @@ const ExperienceSection = () => {
           .mobile-bg {
             display: block;
             width: 100%;
-            height: 250px;
+            height: 200px;
             background: url(${experienceImg}) center/cover no-repeat;
-            border-radius: 16px;
+            border-radius: 12px;
             margin-bottom: 2rem;
+            opacity: 0.7;
           }
           .desktop-bg {
             display: none !important;
@@ -102,25 +103,35 @@ const ExperienceSection = () => {
           .center-col h2 {
             font-size: 1.9rem !important;
           }
+          .mobile-bg {
+            height: 150px;
+          }
         }
       `}
       </style>
 
-      {/* Desktop right-side background image */}
+      {/* Improved Desktop background image */}
       <div
-        className="desktop-bg"
-        style={{
-          position: "absolute",
-          right: 0,
-          top: 0,
-          bottom: 0,
-          width: "45%",
-          background: `linear-gradient(135deg, rgba(192, 161, 102, 0.15) 0%, rgba(192, 161, 102, 0.05) 100%), url(${experienceImg}) center/cover no-repeat`,
-          opacity: 0.85,
-          borderTopLeftRadius: "30px",
-          borderBottomLeftRadius: "30px",
-        }}
-      ></div>
+  className="desktop-bg"
+  style={{
+    position: "absolute",
+    right: "5%",
+    top: "0",
+    width: "29%",
+    height: "70%",
+    maxHeight: "500px",
+    backgroundImage: `url(${experienceImg})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "top center",
+    borderRadius: "20px",
+    boxShadow: "0 15px 40px rgba(192, 161, 102, 0.2)",
+    opacity: 0.9,
+    zIndex: 1,
+    marginTop: "2rem", // Optional, adjust for spacing
+  }}
+></div>
+
 
       {/* Section Content */}
       <div
@@ -128,7 +139,7 @@ const ExperienceSection = () => {
         style={{
           display: "flex",
           width: "90%",
-          maxWidth: "1400px",
+          maxWidth: "1300px",
           margin: "0 auto",
           zIndex: 2,
           alignItems: "flex-start",
@@ -143,6 +154,8 @@ const ExperienceSection = () => {
             flex: "0 0 380px",
             display: "flex",
             flexDirection: "column",
+            position: "relative",
+            zIndex: 3,
           }}
         >
           <h3
@@ -156,6 +169,17 @@ const ExperienceSection = () => {
             }}
           >
             Career Timeline
+            <span
+              style={{
+                position: "absolute",
+                bottom: "-10px",
+                left: 0,
+                width: "50px",
+                height: "3px",
+                background: "linear-gradient(90deg, #c0a166, #d4b85c)",
+                borderRadius: "2px",
+              }}
+            ></span>
           </h3>
 
           {timelineRoles.map((role, idx) => (
@@ -178,6 +202,8 @@ const ExperienceSection = () => {
                     : "2px solid #e8dfd1",
                 overflow: "hidden",
                 transition: "all 0.3s ease",
+                position: "relative",
+                zIndex: 2,
               }}
             >
               <div
@@ -189,9 +215,12 @@ const ExperienceSection = () => {
                   justifyContent: "space-between",
                   alignItems: "center",
                   color: openDropdown === idx ? sand : "#554c3f",
+                  fontWeight: openDropdown === idx ? 700 : 600,
+                  background: "transparent",
+                  transition: "all 0.3s ease",
                 }}
               >
-                <span>{role.label}</span>
+                <span style={{ fontSize: "1.1rem" }}>{role.label}</span>
                 <svg
                   width="16"
                   height="16"
@@ -220,7 +249,7 @@ const ExperienceSection = () => {
                     ? "0 1.5rem 1.5rem"
                     : "0 1.5rem",
                   overflow: "hidden",
-                  transition: "all 0.3s ease",
+                  transition: "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
                 }}
               >
                 <ul
@@ -229,6 +258,7 @@ const ExperienceSection = () => {
                     fontSize: "1rem",
                     lineHeight: "1.6",
                     paddingLeft: "20px",
+                    margin: 0,
                   }}
                 >
                   {role.details.map((detail, i) => (
@@ -247,48 +277,65 @@ const ExperienceSection = () => {
           className="center-col"
           style={{
             flex: "1 1 500px",
-            background: "linear-gradient(135deg, #fff 0%, #fefcf5 100%)",
-            borderRadius: "24px",
-            padding: "3rem",
-            boxShadow: "0 12px 50px rgba(192, 161, 102, 0.15)",
+            background: "linear-gradient(135deg, #ffffff 0%, #fefcf5 100%)",
+            borderRadius: "20px",
+            padding: "2.5rem",
+            boxShadow: "0 15px 50px rgba(192, 161, 102, 0.15)",
             border: "1px solid #f0e6d3",
-            maxWidth: "580px",
+            maxWidth: "550px",
             position: "relative",
+            zIndex: 3,
           }}
         >
           <h2
             style={{
               color: sand,
               fontWeight: 800,
-              fontSize: "2.4rem",
-              marginBottom: "1rem",
+              fontSize: "2.2rem",
+              marginBottom: "1.5rem",
+              letterSpacing: "-0.5px",
+              lineHeight: "1.2",
             }}
           >
             Experience & Credentials
           </h2>
 
           {/* RECENT EXPERIENCE */}
-          <div>
+          <div style={{ marginBottom: "2rem" }}>
             <h4
               style={{
                 color: sand,
                 fontWeight: 700,
                 fontSize: "1.3rem",
                 marginBottom: "1rem",
+                position: "relative",
+                display: "inline-block",
               }}
             >
               Recent Experience
+              <span
+                style={{
+                  position: "absolute",
+                  bottom: "-4px",
+                  left: 0,
+                  width: "30px",
+                  height: "2px",
+                  background: "linear-gradient(90deg, #c0a166, #d4b85c)",
+                  borderRadius: "1px",
+                }}
+              ></span>
             </h4>
             <ul
               style={{
                 color: "#48413a",
                 fontSize: "1.05rem",
-                lineHeight: "1.8",
-                paddingLeft: "24px",
+                lineHeight: "1.7",
+                paddingLeft: "20px",
+                margin: 0,
               }}
             >
               {recentExperience.map((exp, idx) => (
-                <li key={idx} style={{ marginBottom: "0.8rem" }}>
+                <li key={idx} style={{ marginBottom: "0.7rem" }}>
                   {exp}
                 </li>
               ))}
@@ -303,15 +350,30 @@ const ExperienceSection = () => {
                 fontWeight: 700,
                 fontSize: "1.3rem",
                 marginBottom: "1rem",
+                position: "relative",
+                display: "inline-block",
               }}
             >
               Professional Expertise
+              <span
+                style={{
+                  position: "absolute",
+                  bottom: "-4px",
+                  left: 0,
+                  width: "35px",
+                  height: "2px",
+                  background: "linear-gradient(90deg, #c0a166, #d4b85c)",
+                  borderRadius: "1px",
+                }}
+              ></span>
             </h4>
             <p
               style={{
                 color: "#665b4c",
                 fontSize: "1.05rem",
-                lineHeight: "1.75",
+                lineHeight: "1.7",
+                margin: 0,
+                fontWeight: 500,
               }}
             >
               Click on the career timeline items to explore detailed experience
@@ -320,11 +382,12 @@ const ExperienceSection = () => {
           </div>
         </div>
 
-        {/* RIGHT SPACER (DESKTOP ONLY) */}
+        {/* RIGHT SPACER (DESKTOP ONLY) - Reduced width */}
         <div
           className="right-col"
           style={{
-            flex: "0 0 380px",
+            flex: "0 0 300px",
+            height: "100%",
           }}
         ></div>
       </div>

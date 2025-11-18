@@ -4,186 +4,201 @@ import '../index.css';
 const sand = '#c0a166';
 const darkBrown = '#2c2415';
 const mediumBrown = '#594e39';
-const lightBrown = '#8a7c63';
-const background = '#ffffff';
 
 const education = [
-  'BEng (Hons), King\'s College London',
-  'MSc (Econ), London School of Economics',
-  'Common Professional Exam, City University',
-  'Bar Vocational Course, Inns of Court School of Law',
-  "Called to the Bar, Lincoln's Inn (1994)",
-  'STEP Trust & Estate Practitioner (2005)'
+  {
+    degree: 'BEng (Hons)',
+    institution: 'King\'s College London',
+    year: '1990-1993'
+  },
+  {
+    degree: 'MSc (Econ)',
+    institution: 'London School of Economics',
+    year: '1993-1994'
+  },
+  {
+    degree: 'Common Professional Exam',
+    institution: 'City University',
+    year: '1994-1995'
+  },
+  {
+    degree: 'Bar Vocational Course',
+    institution: 'Inns of Court School of Law',
+    year: '1995-1996'
+  },
+  {
+    degree: 'Called to the Bar',
+    institution: 'Lincoln\'s Inn',
+    year: '1994'
+  },
+  {
+    degree: 'STEP Trust & Estate Practitioner',
+    institution: 'Society of Trust and Estate Practitioners',
+    year: '2005'
+  }
 ];
 
 const EducationSection = () => (
   <section style={{
-    background: background,
-    padding: '5rem 0',
-    fontFamily: 'Inter, Poppins, serif',
+    background: '#ffffff',
+    padding: '4rem 0',
+    fontFamily: 'Inter, Poppins, sans-serif',
     width: '100%',
     position: 'relative',
-    overflow: 'hidden',
   }}>
-    {/* Background decorative elements */}
-    <div style={{
-      position: 'absolute',
-      top: '-100px',
-      right: '-100px',
-      width: '300px',
-      height: '300px',
-      background: 'radial-gradient(circle, rgba(192,161,102,0.05) 0%, rgba(192,161,102,0) 70%)',
-      borderRadius: '50%',
-    }}></div>
     
     <div style={{
-      position: 'absolute',
-      bottom: '-150px',
-      left: '-150px',
-      width: '400px',
-      height: '400px',
-      background: 'radial-gradient(circle, rgba(44,36,21,0.03) 0%, rgba(44,36,21,0) 70%)',
-      borderRadius: '50%',
-    }}></div>
-
-    <div style={{
-      maxWidth: '1200px',
+      maxWidth: '900px',
       margin: '0 auto',
-      padding: '0 2vw',
-      position: 'relative',
-      zIndex: 2
+      padding: '0 2rem',
     }}>
-      <h2 style={{
+      
+      {/* Header Section */}
+      <div style={{
         textAlign: 'center',
-        color: darkBrown,
-        fontWeight: 800,
-        fontSize: '2.5rem',
-        letterSpacing: '-0.5px',
-        marginBottom: '1rem',
+        marginBottom: '3rem',
       }}>
-        Education
-      </h2>
+        <h2 style={{
+          color: darkBrown,
+          fontWeight: 700,
+          fontSize: '2.2rem',
+          marginBottom: '0.8rem',
+          letterSpacing: '-0.5px',
+        }}>
+          Education & Qualifications
+        </h2>
+        
+        <div style={{
+          width: '60px',
+          height: '3px',
+          background: sand,
+          margin: '0 auto 1rem auto',
+          borderRadius: '2px',
+        }}></div>
+        
+        <p style={{
+          color: mediumBrown,
+          fontSize: '1.1rem',
+          fontWeight: 400,
+          maxWidth: '500px',
+          margin: '0 auto',
+          lineHeight: '1.5',
+          opacity: 0.8,
+        }}>
+          Academic background and professional qualifications
+        </p>
+      </div>
       
-      {/* Accent underline */}
+      {/* Education List - Compact Design */}
       <div style={{
-        width: '80px',
-        height: '4px',
-        background: 'linear-gradient(90deg, #c0a166, #d4b85c)',
-        margin: '0 auto 3rem auto',
-        borderRadius: '2px',
-      }}></div>
-      
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-        gap: '2rem',
-        justifyContent: 'center',
-        alignItems: 'stretch'
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '0.8rem',
+        maxWidth: '700px',
+        margin: '0 auto',
       }}>
-        {education.map((item, idx) => (
+        {education.map((edu, idx) => (
           <div
-            key={item}
+            key={idx}
             style={{
-              background: '#ffffff',
-              color: darkBrown,
-              borderRadius: '12px',
-              boxShadow: '0 4px 20px rgba(44,36,21,0.08)',
-              padding: '2.5rem 2rem',
-              fontWeight: 600,
-              fontSize: '1.1rem',
-              textAlign: 'center',
-              letterSpacing: '0.01em',
-              border: `1px solid #f0f0f0`,
-              transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
               display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
               alignItems: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              minHeight: '140px',
+              padding: '1.2rem 1.5rem',
+              background: '#fcf9ef',
+              borderRadius: '10px',
+              border: `1px solid #e8dfd1`,
+              transition: 'all 0.2s ease',
               cursor: 'pointer',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-8px)';
-              e.currentTarget.style.boxShadow = '0 12px 40px rgba(44,36,21,0.15)';
+              e.currentTarget.style.background = '#fffbf0';
               e.currentTarget.style.borderColor = sand;
+              e.currentTarget.style.transform = 'translateX(5px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 4px 20px rgba(44,36,21,0.08)';
-              e.currentTarget.style.borderColor = '#f0f0f0';
+              e.currentTarget.style.background = '#fcf9ef';
+              e.currentTarget.style.borderColor = '#e8dfd1';
+              e.currentTarget.style.transform = 'translateX(0)';
             }}
           >
-            {/* Top accent border */}
+            {/* Number Indicator */}
             <div style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              height: '3px',
-              background: 'linear-gradient(90deg, #c0a166, #d4b85c)',
-              borderRadius: '12px 12px 0 0',
-            }}></div>
-            
-            {/* Icon/Number */}
-            <div style={{
-              width: '50px',
-              height: '50px',
-              background: 'linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%)',
+              width: '32px',
+              height: '32px',
+              background: sand,
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '1.2rem',
-              border: `2px solid ${sand}`,
-              color: sand,
-              fontWeight: 700,
-              fontSize: '1.2rem',
-              boxShadow: '0 4px 12px rgba(44,36,21,0.1)',
-              transition: 'all 0.3s ease',
+              color: '#ffffff',
+              fontWeight: 600,
+              fontSize: '0.9rem',
+              marginRight: '1.2rem',
+              flexShrink: 0,
             }}>
               {idx + 1}
             </div>
             
-            <span style={{
-              fontSize: '1.15rem',
-              fontWeight: 700,
-              color: darkBrown,
-              lineHeight: '1.5',
-              textAlign: 'center',
-              position: 'relative',
-              zIndex: 2,
-            }}>
-              {item}
-            </span>
-            
-            {/* Subtle corner accent */}
+            {/* Education Content */}
             <div style={{
-              position: 'absolute',
-              top: 0,
-              right: 0,
-              width: '40px',
-              height: '40px',
-              background: 'linear-gradient(135deg, transparent 50%, rgba(192,161,102,0.03) 50%)',
-              borderBottomLeftRadius: '12px',
-              transition: 'all 0.3s ease',
-            }}></div>
+              flex: 1,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}>
+              <div>
+                <div style={{
+                  color: darkBrown,
+                  fontWeight: 600,
+                  fontSize: '1.1rem',
+                  marginBottom: '0.2rem',
+                }}>
+                  {edu.degree}
+                </div>
+                <div style={{
+                  color: mediumBrown,
+                  fontWeight: 400,
+                  fontSize: '0.95rem',
+                  opacity: 0.8,
+                }}>
+                  {edu.institution}
+                </div>
+              </div>
+              
+              {/* Year */}
+              <div style={{
+                color: sand,
+                fontWeight: 600,
+                fontSize: '0.9rem',
+                background: 'rgba(192,161,102,0.1)',
+                padding: '0.4rem 0.8rem',
+                borderRadius: '12px',
+                marginLeft: '1rem',
+                flexShrink: 0,
+              }}>
+                {edu.year}
+              </div>
+            </div>
           </div>
         ))}
       </div>
       
-      {/* Bottom decorative element */}
+      {/* Compact Footer */}
       <div style={{
         textAlign: 'center',
-        marginTop: '3rem',
-        color: mediumBrown,
-        fontSize: '1rem',
-        fontWeight: 500,
-        fontStyle: 'italic',
-        opacity: 0.8,
+        marginTop: '2.5rem',
+        padding: '1.5rem',
       }}>
-        Comprehensive Legal Education & Professional Qualifications
+        <p style={{
+          color: mediumBrown,
+          fontSize: '0.95rem',
+          fontWeight: 500,
+          margin: 0,
+          fontStyle: 'italic',
+          opacity: 0.7,
+        }}>
+          Continuous professional development
+        </p>
       </div>
     </div>
   </section>

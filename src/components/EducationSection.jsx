@@ -239,42 +239,50 @@ const EducationSection = () => {
           ))}
         </div>
         
-        {/* Footer */}
+        {/* Footer - Fixed Alignment */}
         <div style={{
           textAlign: 'center',
           marginTop: '3rem',
           padding: '2rem',
         }}>
           <div style={{
-            display: 'inline-flex',
+            display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
             gap: '0.8rem',
-            marginBottom: '0.8rem',
+            maxWidth: '500px',
+            margin: '0 auto',
           }}>
             <div style={{
-              width: '6px',
-              height: '6px',
-              background: sand,
-              borderRadius: '50%',
-            }}></div>
-            <span style={{
-              color: darkBrown,
-              fontWeight: 600,
-              fontSize: '1rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.8rem',
             }}>
-              Continuous Professional Development
-            </span>
+              <div style={{
+                width: '6px',
+                height: '6px',
+                background: sand,
+                borderRadius: '50%',
+              }}></div>
+              <span style={{
+                color: darkBrown,
+                fontWeight: 600,
+                fontSize: '1rem',
+              }}>
+                Continuous Professional Development
+              </span>
+            </div>
+            <p style={{
+              color: mediumBrown,
+              fontSize: '0.95rem',
+              margin: 0,
+              opacity: 0.8,
+              lineHeight: '1.5',
+              textAlign: 'center',
+            }}>
+              Maintaining excellence through ongoing education and professional growth
+            </p>
           </div>
-          <p style={{
-            color: mediumBrown,
-            fontSize: '0.95rem',
-            margin: 0,
-            opacity: 0.8,
-            maxWidth: '500px',
-            lineHeight: '1.5',
-          }}>
-            Maintaining excellence through ongoing education and professional growth
-          </p>
         </div>
       </div>
 

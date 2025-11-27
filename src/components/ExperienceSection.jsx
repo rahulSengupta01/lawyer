@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../index.css";
-import experienceImg from "../assets/lawyer.jpg";
 
 const timelineRoles = [
   {
@@ -54,17 +53,36 @@ const ExperienceSection = () => {
       style={{
         position: "relative",
         width: "100%",
-        background: "#fcf9ef",
-        padding: "4rem 0",
+        background: "linear-gradient(135deg, #fcf9ef 0%, #f8f4e8 100%)",
+        padding: "5rem 0",
         fontFamily: "Inter, Poppins, sans-serif",
         overflow: "hidden",
       }}
     >
-      {/* Mobile background image */}
+      {/* Background decorative elements */}
       <div
-        className="mobile-bg"
         style={{
-          display: "none",
+          position: "absolute",
+          top: "-100px",
+          left: "-100px",
+          width: "300px",
+          height: "300px",
+          borderRadius: "50%",
+          background: "linear-gradient(135deg, rgba(192, 161, 102, 0.05) 0%, rgba(192, 161, 102, 0.1) 100%)",
+          zIndex: 0,
+        }}
+      ></div>
+      
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-50px",
+          right: "-50px",
+          width: "200px",
+          height: "200px",
+          borderRadius: "50%",
+          background: "linear-gradient(135deg, rgba(192, 161, 102, 0.03) 0%, rgba(192, 161, 102, 0.08) 100%)",
+          zIndex: 0,
         }}
       ></div>
 
@@ -75,63 +93,19 @@ const ExperienceSection = () => {
             flex-direction: column;
             gap: 2rem !important;
           }
-          .left-col, .right-col {
-            flex: 1 1 auto !important;
+          .left-content, .right-content {
             width: 100% !important;
             padding: 0 !important;
-          }
-          .center-col {
-            width: 100% !important;
-            max-width: 100% !important;
-            padding: 2rem 1.5rem !important;
-          }
-          .mobile-bg {
-            display: block;
-            width: 100%;
-            height: 200px;
-            background: url(${experienceImg}) center/cover no-repeat;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            opacity: 0.7;
-          }
-          .desktop-bg {
-            display: none !important;
           }
         }
 
         @media (max-width: 480px) {
-          .center-col h2 {
+          .left-content h2 {
             font-size: 1.9rem !important;
-          }
-          .mobile-bg {
-            height: 150px;
           }
         }
       `}
       </style>
-
-      {/* Improved Desktop background image */}
-      <div
-  className="desktop-bg"
-  style={{
-    position: "absolute",
-    right: "5%",
-    top: "0",
-    width: "29%",
-    height: "70%",
-    maxHeight: "500px",
-    backgroundImage: `url(${experienceImg})`,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "top center",
-    borderRadius: "20px",
-    boxShadow: "0 15px 40px rgba(192, 161, 102, 0.2)",
-    opacity: 0.9,
-    zIndex: 1,
-    marginTop: "2rem", // Optional, adjust for spacing
-  }}
-></div>
-
 
       {/* Section Content */}
       <div
@@ -139,257 +113,365 @@ const ExperienceSection = () => {
         style={{
           display: "flex",
           width: "90%",
-          maxWidth: "1300px",
+          maxWidth: "1400px",
           margin: "0 auto",
           zIndex: 2,
           alignItems: "flex-start",
-          gap: "3rem",
+          gap: "4rem",
           position: "relative",
         }}
       >
-        {/* LEFT COLUMN */}
+        {/* LEFT COLUMN - Experience & Credentials */}
         <div
-          className="left-col"
+          className="left-content"
           style={{
-            flex: "0 0 380px",
+            flex: "1 1 600px",
             display: "flex",
             flexDirection: "column",
             position: "relative",
             zIndex: 3,
           }}
         >
-          <h3
+          <div
             style={{
-              color: sand,
-              fontWeight: 800,
-              fontSize: "1.5rem",
-              marginBottom: "2.5rem",
-              textAlign: "left",
+              background: "linear-gradient(135deg, #ffffff 0%, #fefcf5 100%)",
+              borderRadius: "24px",
+              padding: "3rem",
+              boxShadow: `
+                0 20px 60px rgba(192, 161, 102, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.8)
+              `,
+              border: "1px solid #f0e6d3",
               position: "relative",
+              zIndex: 3,
+              overflow: "hidden",
             }}
           >
-            Career Timeline
-            <span
+            {/* Subtle corner accent */}
+            <div
               style={{
                 position: "absolute",
-                bottom: "-10px",
-                left: 0,
-                width: "50px",
-                height: "3px",
-                background: "linear-gradient(90deg, #c0a166, #d4b85c)",
-                borderRadius: "2px",
+                top: "0",
+                left: "0",
+                width: "120px",
+                height: "120px",
+                background: "linear-gradient(135deg, rgba(192, 161, 102, 0.03) 50%, transparent 50%)",
+                borderRadius: "24px 0 0 0",
               }}
-            ></span>
-          </h3>
+            ></div>
 
-          {timelineRoles.map((role, idx) => (
-            <div
-              key={role.label}
+            <h2
               style={{
-                marginBottom: "1rem",
-                borderRadius: "12px",
-                background:
-                  openDropdown === idx
-                    ? "linear-gradient(135deg, #fffbf0 0%, #fef7e5 100%)"
-                    : "#fff",
-                boxShadow:
-                  openDropdown === idx
-                    ? "0 8px 32px rgba(192, 161, 102, 0.2)"
-                    : "0 4px 20px rgba(192, 161, 102, 0.08)",
-                border:
-                  openDropdown === idx
-                    ? `2px solid ${sand}`
-                    : "2px solid #e8dfd1",
-                overflow: "hidden",
-                transition: "all 0.3s ease",
+                color: sand,
+                fontWeight: 800,
+                fontSize: "2.4rem",
+                marginBottom: "2rem",
+                letterSpacing: "-0.5px",
+                lineHeight: "1.2",
                 position: "relative",
-                zIndex: 2,
               }}
             >
-              <div
-                onClick={() => toggleDropdown(idx)}
-                style={{
-                  padding: "1.5rem",
-                  cursor: "pointer",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  color: openDropdown === idx ? sand : "#554c3f",
-                  fontWeight: openDropdown === idx ? 700 : 600,
-                  background: "transparent",
-                  transition: "all 0.3s ease",
-                }}
-              >
-                <span style={{ fontSize: "1.1rem" }}>{role.label}</span>
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  style={{
-                    transform:
-                      openDropdown === idx
-                        ? "rotate(180deg)"
-                        : "rotate(0deg)",
-                    transition: "0.3s",
-                    color: sand,
-                  }}
-                >
-                  <path d="M6 9l6 6 6-6" />
-                </svg>
-              </div>
+              Experience & Credentials
+            </h2>
 
-              <div
-                style={{
-                  maxHeight: openDropdown === idx ? "200px" : "0",
-                  opacity: openDropdown === idx ? 1 : 0,
-                  padding: openDropdown === idx
-                    ? "0 1.5rem 1.5rem"
-                    : "0 1.5rem",
-                  overflow: "hidden",
-                  transition: "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-                }}
-              >
-                <ul
+            {/* RECENT EXPERIENCE */}
+            <div style={{ marginBottom: "2.5rem", position: "relative" }}>
+              <div style={{ display: "flex", alignItems: "center", marginBottom: "1.5rem" }}>
+                <div
                   style={{
-                    color: "#665b4c",
-                    fontSize: "1rem",
-                    lineHeight: "1.6",
-                    paddingLeft: "20px",
+                    width: "4px",
+                    height: "24px",
+                    background: "linear-gradient(to bottom, #c0a166, #d4b85c)",
+                    borderRadius: "2px",
+                    marginRight: "12px",
+                  }}
+                ></div>
+                <h4
+                  style={{
+                    color: sand,
+                    fontWeight: 700,
+                    fontSize: "1.4rem",
                     margin: 0,
                   }}
                 >
-                  {role.details.map((detail, i) => (
-                    <li key={i} style={{ marginBottom: "0.5rem" }}>
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
+                  Recent Experience
+                </h4>
               </div>
+              <ul
+                style={{
+                  color: "#48413a",
+                  fontSize: "1.08rem",
+                  lineHeight: "1.75",
+                  paddingLeft: "0",
+                  margin: 0,
+                }}
+              >
+                {recentExperience.map((exp, idx) => (
+                  <li 
+                    key={idx} 
+                    style={{ 
+                      marginBottom: "1rem",
+                      paddingLeft: "1.5rem",
+                      position: "relative",
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "absolute",
+                        left: "0",
+                        top: "12px",
+                        width: "8px",
+                        height: "8px",
+                        borderRadius: "50%",
+                        background: sand,
+                        opacity: 0.7,
+                      }}
+                    ></div>
+                    {exp}
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
+
+            {/* PROFESSIONAL EXPERTISE */}
+            <div style={{ position: "relative" }}>
+              <div style={{ display: "flex", alignItems: "center", marginBottom: "1.5rem" }}>
+                <div
+                  style={{
+                    width: "4px",
+                    height: "24px",
+                    background: "linear-gradient(to bottom, #c0a166, #d4b85c)",
+                    borderRadius: "2px",
+                    marginRight: "12px",
+                  }}
+                ></div>
+                <h4
+                  style={{
+                    color: sand,
+                    fontWeight: 700,
+                    fontSize: "1.4rem",
+                    margin: 0,
+                  }}
+                >
+                  Professional Expertise
+                </h4>
+              </div>
+              <p
+                style={{
+                  color: "#665b4c",
+                  fontSize: "1.08rem",
+                  lineHeight: "1.7",
+                  margin: 0,
+                  fontWeight: 500,
+                  background: "linear-gradient(135deg, #fef9ec 0%, #fdf6e7 100%)",
+                  padding: "1.5rem",
+                  borderRadius: "12px",
+                  border: "1px solid #f0e6d3",
+                }}
+              >
+                Click on the career timeline items to explore detailed experience
+                and accomplishments from each professional role.
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* CENTER COLUMN */}
+        {/* RIGHT COLUMN - Career Timeline Only */}
         <div
-          className="center-col"
+          className="right-content"
           style={{
-            flex: "1 1 500px",
-            background: "linear-gradient(135deg, #ffffff 0%, #fefcf5 100%)",
-            borderRadius: "20px",
-            padding: "2.5rem",
-            boxShadow: "0 15px 50px rgba(192, 161, 102, 0.15)",
-            border: "1px solid #f0e6d3",
-            maxWidth: "550px",
+            flex: "0 0 500px",
+            display: "flex",
+            flexDirection: "column",
             position: "relative",
             zIndex: 3,
           }}
         >
-          <h2
+          {/* Career Timeline Section */}
+          <div 
+            className="timeline-section"
             style={{
-              color: sand,
-              fontWeight: 800,
-              fontSize: "2.2rem",
-              marginBottom: "1.5rem",
-              letterSpacing: "-0.5px",
-              lineHeight: "1.2",
+              background: "linear-gradient(135deg, #ffffff 0%, #fefcf5 100%)",
+              borderRadius: "24px",
+              padding: "2.5rem",
+              boxShadow: `
+                0 15px 40px rgba(192, 161, 102, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.8)
+              `,
+              border: "1px solid #f0e6d3",
+              height: "fit-content",
             }}
           >
-            Experience & Credentials
-          </h2>
+            <div style={{ position: "relative", marginBottom: "2.5rem" }}>
+              <h3
+                style={{
+                  color: sand,
+                  fontWeight: 800,
+                  fontSize: "1.6rem",
+                  marginBottom: "1rem",
+                  textAlign: "left",
+                  position: "relative",
+                  display: "inline-block",
+                }}
+              >
+                Career Timeline
+              </h3>
+              <div
+                style={{
+                  width: "60px",
+                  height: "4px",
+                  background: "linear-gradient(90deg, #c0a166, #d4b85c)",
+                  borderRadius: "2px",
+                  marginTop: "0.5rem",
+                }}
+              ></div>
+            </div>
 
-          {/* RECENT EXPERIENCE */}
-          <div style={{ marginBottom: "2rem" }}>
-            <h4
-              style={{
-                color: sand,
-                fontWeight: 700,
-                fontSize: "1.3rem",
-                marginBottom: "1rem",
-                position: "relative",
-                display: "inline-block",
-              }}
-            >
-              Recent Experience
-              <span
+            <div style={{ position: "relative" }}>
+              {/* Timeline line */}
+              <div
                 style={{
                   position: "absolute",
-                  bottom: "-4px",
-                  left: 0,
-                  width: "30px",
-                  height: "2px",
-                  background: "linear-gradient(90deg, #c0a166, #d4b85c)",
-                  borderRadius: "1px",
+                  left: "20px",
+                  top: "0",
+                  bottom: "0",
+                  width: "2px",
+                  background: "linear-gradient(to bottom, #c0a166, #d4b85c, #e8dfd1)",
+                  zIndex: 1,
                 }}
-              ></span>
-            </h4>
-            <ul
-              style={{
-                color: "#48413a",
-                fontSize: "1.05rem",
-                lineHeight: "1.7",
-                paddingLeft: "20px",
-                margin: 0,
-              }}
-            >
-              {recentExperience.map((exp, idx) => (
-                <li key={idx} style={{ marginBottom: "0.7rem" }}>
-                  {exp}
-                </li>
+              ></div>
+
+              {timelineRoles.map((role, idx) => (
+                <div
+                  key={role.label}
+                  style={{
+                    marginBottom: "1.5rem",
+                    borderRadius: "16px",
+                    background:
+                      openDropdown === idx
+                        ? "linear-gradient(135deg, #fffbf0 0%, #fef7e5 100%)"
+                        : "#ffffff",
+                    boxShadow:
+                      openDropdown === idx
+                        ? "0 12px 40px rgba(192, 161, 102, 0.25)"
+                        : "0 6px 25px rgba(192, 161, 102, 0.12)",
+                    border:
+                      openDropdown === idx
+                        ? `2px solid ${sand}`
+                        : "2px solid #f0e6d3",
+                    overflow: "hidden",
+                    transition: "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                    position: "relative",
+                    zIndex: 2,
+                    transform: openDropdown === idx ? "translateX(8px)" : "none",
+                  }}
+                >
+                  {/* Timeline dot */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      left: "14px",
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                      width: "12px",
+                      height: "12px",
+                      borderRadius: "50%",
+                      background: openDropdown === idx ? sand : "#e8dfd1",
+                      border: `2px solid ${openDropdown === idx ? sand : "#ffffff"}`,
+                      zIndex: 3,
+                      transition: "all 0.3s ease",
+                    }}
+                  ></div>
+
+                  <div
+                    onClick={() => toggleDropdown(idx)}
+                    style={{
+                      padding: "1.5rem 1.5rem 1.5rem 2.8rem",
+                      cursor: "pointer",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      color: openDropdown === idx ? sand : "#554c3f",
+                      fontWeight: openDropdown === idx ? 700 : 600,
+                      background: "transparent",
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    <span style={{ fontSize: "1.1rem", lineHeight: "1.4" }}>
+                      {role.label}
+                    </span>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      style={{
+                        transform:
+                          openDropdown === idx
+                            ? "rotate(180deg)"
+                            : "rotate(0deg)",
+                        transition: "0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                        color: sand,
+                        flexShrink: 0,
+                      }}
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </div>
+
+                  <div
+                    style={{
+                      maxHeight: openDropdown === idx ? "300px" : "0",
+                      opacity: openDropdown === idx ? 1 : 0,
+                      padding: openDropdown === idx
+                        ? "0 1.5rem 1.5rem 2.8rem"
+                        : "0 1.5rem",
+                      overflow: "hidden",
+                      transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                    }}
+                  >
+                    <ul
+                      style={{
+                        color: "#665b4c",
+                        fontSize: "1rem",
+                        lineHeight: "1.6",
+                        paddingLeft: "0",
+                        margin: 0,
+                      }}
+                    >
+                      {role.details.map((detail, i) => (
+                        <li 
+                          key={i} 
+                          style={{ 
+                            marginBottom: "0.75rem",
+                            paddingLeft: "0",
+                            position: "relative",
+                          }}
+                        >
+                          <div
+                            style={{
+                              position: "absolute",
+                              left: "-12px",
+                              top: "8px",
+                              width: "6px",
+                              height: "6px",
+                              borderRadius: "50%",
+                              background: sand,
+                              opacity: 0.6,
+                            }}
+                          ></div>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               ))}
-            </ul>
-          </div>
-
-          {/* PROFESSIONAL EXPERTISE */}
-          <div>
-            <h4
-              style={{
-                color: sand,
-                fontWeight: 700,
-                fontSize: "1.3rem",
-                marginBottom: "1rem",
-                position: "relative",
-                display: "inline-block",
-              }}
-            >
-              Professional Expertise
-              <span
-                style={{
-                  position: "absolute",
-                  bottom: "-4px",
-                  left: 0,
-                  width: "35px",
-                  height: "2px",
-                  background: "linear-gradient(90deg, #c0a166, #d4b85c)",
-                  borderRadius: "1px",
-                }}
-              ></span>
-            </h4>
-            <p
-              style={{
-                color: "#665b4c",
-                fontSize: "1.05rem",
-                lineHeight: "1.7",
-                margin: 0,
-                fontWeight: 500,
-              }}
-            >
-              Click on the career timeline items to explore detailed experience
-              and accomplishments from each professional role.
-            </p>
+            </div>
           </div>
         </div>
-
-        {/* RIGHT SPACER (DESKTOP ONLY) - Reduced width */}
-        <div
-          className="right-col"
-          style={{
-            flex: "0 0 300px",
-            height: "100%",
-          }}
-        ></div>
       </div>
     </section>
   );

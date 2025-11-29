@@ -156,7 +156,7 @@ const HowIWorkSection = () => {
             border: '1px solid #f5f2eb',
             position: 'relative'
           }}>
-            "I provide clear, pragmatic, internationally informed advice focused on confidentiality, commercial sense, and efficient execution."
+            "I provide clear, pragmatic, confidential internationally informed advice focused on , commercial sense, and efficient execution."
             <div style={{
               position: 'absolute',
               top: '20px',

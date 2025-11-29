@@ -8,7 +8,7 @@ const expertiseList = [
   'Multi-jurisdictional tax planning',
   'Family succession strategies',
   'Real estate & commercial structuring',
-  'Litigation oversight',
+  'Related litigation oversight',
   'Governance & directorship roles',
 ];
 
@@ -70,8 +70,12 @@ const AboutSection = () => {
             lineHeight: '1.7',
             marginBottom: isMobile ? '1.4rem' : '2rem',
           }}>
-            Stuart has nearly 30 years of international legal and consulting experience, gained at the English Bar, global law firms, and senior in-house counsel roles.<br /><br />
-            Now based in the UAE, he advises high-net-worth individuals, family businesses, and private offices on private wealth structuring, succession planning, and cross-border financial architecture.
+            Stuart has nearly 30 years of international legal and consulting experience, gained at the
+English Bar, global law firms, and senior in-house counsel roles.<br /><br />
+            Currently based in the
+UAE, he advises high-net-worth individuals, family businesses, and family offices on
+private wealth structuring, succession planning, asset protection and cross-border financial
+architecture.
           </p>
           <img
             src={lawAboutImage}

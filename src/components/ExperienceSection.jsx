@@ -2,39 +2,49 @@ import React, { useState } from "react";
 import "../index.css";
 
 const timelineRoles = [
+
   {
-    label: "Graphene Star Ltd (UK)",
+    label: "London UHNW Family Office:",
     details: [
-      "Strategic legal guidance, capital raising, IP protection, R&D contracts & negotiations.",
+      "Restructuring of USD 2Billon+ wealth, succession and tax planning, trust /company restructuring, real estate development and litigation management and strategy, charity formation.",
     ],
   },
   {
-    label: "London UHNW Family Office",
+    label: "New York/Monaco HNW Family Office:",
     details: [
-      "Restructuring of USD 2B+ wealth, litigation strategy, real estate development & charity formation.",
+      "Management of USD 200Million+ trust structures, international tax management, cross-border contentious &amp; non-contentious matters.",
     ],
   },
-  {
-    label: "New York/Monaco UHNW Family Office",
+
+  //   {
+  //   label: "Graphene Star Ltd (UK)",
+  //   details: [
+  //     "Strategic legal guidance, capital raising, IP protection, R&D contracts & negotiations.",
+  //   ],
+  // },
+    {
+    label: "Graphene Star Ltd (UK):",
     details: [
-      "Management of USD 150M+ trust structures, cross-border contentious & non-contentious matters.",
+      "Strategic legal guidance, capital raising, IP protection, R&amp;D contracts &amp; negotiations.",
     ],
   },
-  {
-    label: "Law Firms Associated With",
+    {
+    label: "Previous Law Firms Chambers:",
     details: [
-      "Al Tamimi & Co, Taylor Wessing, Ogier, Walkers, Collas Crill, Mourant.",
-      "Trained as a barrister at Wilberforce Chambers, 11 Stone Buildings & practised at Trinity Chambers.",
+      "Stuart has worked at or provided consultancy services to the following law firms",
+      "Al Tamimi & Co, (Dubai), Taylor Wessing(London), Ogier(Jersey), Walkers(London/Cayman), Collas Crill(Jersey), Mourant(Guernsey).",
+      "Trained as a barrister at Wilberforce Chambers, 11 Stone Buildings (London) & practised atTrinity Chambers(Newcastle Upon Tyne).",
     ],
   },
 ];
 
 const recentExperience = [
-  "Advising multiple HNW families on trusts, foundations & protection structures.",
+  "Advising multiple HNW families with international asset portfolios on trusts, foundations & asset protection structures.",
   "Wealth restructuring for a major Middle Eastern family with multi-jurisdictional tax/litigation issues.",
   "Structuring for a globally prominent individual with complex tax and political considerations.",
   "Advising UAE real estate leader on JV structuring for Dubai property development.",
   "Advisory to UAE Federal Government on Trusts Law and Family Business Law.",
+  "Advisory to major UAE family on restructuring of UK property portfolio.",
   "Governance advisory for Saudi G20 ecological foundation.",
   "Legislative advisory to ADGM Registration Authority.",
 ];

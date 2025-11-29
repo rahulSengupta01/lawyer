@@ -76,7 +76,10 @@ const HeroSection = () => {
               fontSize: isMobile ? '0.95rem' : '1rem'
             }}
           >
-            Providing expert cross-border advisory on trusts, foundations, family business structures, and private wealth planning across the UAE, Middle East, Europe, UK, USA, and leading offshore financial centres.
+            Providing expert cross-border advisory services on trusts, foundations, family business
+structures, and private wealth planning across the Middle East, (including UAE),
+Europe, (including UK), USA, and leading offshore financial centres (such as Jersey and the
+Cayman Islands).
           </p>
           <a
             href="#contact"

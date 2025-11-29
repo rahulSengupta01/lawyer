@@ -23,17 +23,17 @@ const services = [
   {
     title: "Taxation & Multi-Jurisdictional Planning",
     img: taxationImg,
-    description: "Strategies for tax mitigation across several jurisdictions."
+    description: "Strategies for tax mitigation across multiple jurisdictions."
   },
   {
     title: "Family Financial & Succession Planning",
     img: FamilyFinancialImg,
-    description: "Designing long-term structures, charters & governance frameworks."
+    description: "Designing long-term family structures, charters & governance frameworks."
   },
   {
-    title: "Litigation Management & Oversight",
+    title: "Litigation Management & Oversight in related areas",
     img: LitigationManagementImg,
-    description: "Ensuring dispute matters are efficiently and strategically managed."
+    description: "Ensuring dispute matters in these areas of specialism are efficiently and strategically managed."
   },
   {
     title: "Real Estate & Commercial Structuring",

@@ -27,7 +27,7 @@ const HeroSection = () => {
         justifyContent: 'center',
         padding: isMobile ? '2rem 5vw 2.5rem 5vw' : '0 5vw',
         flexDirection: isMobile ? 'column' : 'row',
-        fontFamily: 'Inter, Poppins, sans-serif'
+        fontFamily: 'Inter, Poppins, serif'
       }}
     >
       <div
@@ -53,7 +53,10 @@ const HeroSection = () => {
             style={{
               fontSize: isMobile ? '2.2rem' : '3.8rem',
               marginBottom: isMobile ? '0.7rem' : '1rem',
-              fontWeight: '700'
+              fontWeight: '800',
+              color: '#2c2415',
+              lineHeight: '1.1',
+              letterSpacing: '-0.5px'
             }}
           >
             SP One Consulting
@@ -61,9 +64,9 @@ const HeroSection = () => {
           <h2
             style={{
               fontSize: isMobile ? '1.09rem' : '1.28rem',
-              fontWeight: '500',
+              fontWeight: '600',
               marginBottom: isMobile ? '0.6rem' : '0.8rem',
-              color: '#705d3c'
+              color: '#695a3c'
             }}
           >
             Specialists in International Financial Structuring
@@ -73,7 +76,8 @@ const HeroSection = () => {
               marginBottom: isMobile ? '1.3rem' : '2rem',
               color: '#665b4c',
               lineHeight: '1.6',
-              fontSize: isMobile ? '0.95rem' : '1rem'
+              fontSize: isMobile ? '0.95rem' : '1rem',
+              fontWeight: '500'
             }}
           >
             Providing expert cross-border advisory services on trusts, foundations, family business
@@ -85,14 +89,25 @@ Cayman Islands).
             href="#contact"
             style={{
               display: 'inline-block',
-              background: '#c0a166',
+              background: 'linear-gradient(135deg, #c0a166, #d4b85c)',
               color: 'white',
               fontWeight: '600',
               padding: isMobile ? '0.7rem 1.4rem' : '0.85rem 2rem',
-              borderRadius: '6px',
+              borderRadius: '8px',
               textDecoration: 'none',
-              boxShadow: '0 2px 10px #eedcbe59',
-              fontSize: isMobile ? '1rem' : '1.08rem'
+              boxShadow: '0 4px 16px rgba(192, 161, 102, 0.3)',
+              fontSize: isMobile ? '1rem' : '1.08rem',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+            }}
+            onMouseOver={(e) => {
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 6px 20px rgba(192, 161, 102, 0.4)';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = '0 4px 16px rgba(192, 161, 102, 0.3)';
             }}
           >
             Request a Consultation
@@ -108,18 +123,18 @@ Cayman Islands).
           }}
         >
           <img
-  src={lawHeroImage}
-  alt="Professional portrait or financial graphic"
-  style={{
-    width: isMobile ? '92vw' : '100%',
-    maxHeight: isMobile ? 'auto' : '375px',
-    objectFit: isMobile ? 'contain' : 'cover',
-    objectPosition: 'top center',
-    borderRadius: '14px',
-    boxShadow: '0 4px 24px rgba(192, 161, 102, 0.18)',
-  }}
-/>
-
+            src={lawHeroImage}
+            alt="Professional portrait or financial graphic"
+            style={{
+              width: isMobile ? '92vw' : '100%',
+              maxHeight: isMobile ? 'auto' : '375px',
+              objectFit: isMobile ? 'contain' : 'cover',
+              objectPosition: 'top center',
+              borderRadius: '14px',
+              boxShadow: '0 8px 32px rgba(44, 36, 21, 0.15)',
+              border: '1px solid #f0ece3'
+            }}
+          />
         </div>
       </div>
     </section>

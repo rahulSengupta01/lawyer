@@ -60,6 +60,10 @@ const useWindowWidth = () => {
 const ServiceCard = ({ service, isMobile }) => {
   const [hover, setHover] = useState(false);
 
+  const sand = '#c0a166';
+  const textDark = '#2c2415';
+  const textLight = '#695a3c';
+
   return (
     <div
       style={{
@@ -86,8 +90,8 @@ const ServiceCard = ({ service, isMobile }) => {
           cursor: 'pointer',
           marginBottom: isMobile ? '0.8rem' : '1.5rem',
           boxShadow: hover
-            ? '0 12px 32px rgba(173, 148, 74, 0.25)'
-            : '0 6px 20px rgba(173, 148, 74, 0.12)',
+            ? '0 12px 32px rgba(192, 161, 102, 0.25)'
+            : '0 6px 20px rgba(44, 36, 21, 0.12)',
           transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           transform: hover ? 'translateY(-8px)' : 'translateY(0)',
         }}
@@ -125,7 +129,7 @@ const ServiceCard = ({ service, isMobile }) => {
             position: 'absolute',
             inset: 0,
             borderRadius: isMobile ? '14px' : '20px',
-            border: hover ? '2px solid rgba(173, 148, 74, 0.4)' : '2px solid transparent',
+            border: hover ? '2px solid rgba(192, 161, 102, 0.4)' : '2px solid transparent',
             zIndex: 2,
             transition: 'border-color 0.3s ease',
           }}
@@ -163,7 +167,7 @@ const ServiceCard = ({ service, isMobile }) => {
                 display: 'block',
                 width: hover ? (isMobile ? '40px' : '60px') : '0px',
                 height: '3px',
-                background: 'linear-gradient(90deg, #ad944a, #d4b85c)',
+                background: 'linear-gradient(90deg, #c0a166, #d4b85c)',
                 margin: isMobile ? '6px 0 0 0' : '12px 0 0 0',
                 transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
                 borderRadius: '2px',
@@ -182,7 +186,7 @@ const ServiceCard = ({ service, isMobile }) => {
             right: '20px',
             width: '36px',
             height: '36px',
-            background: 'rgba(173, 148, 74, 0.9)',
+            background: 'rgba(192, 161, 102, 0.9)',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
@@ -203,12 +207,12 @@ const ServiceCard = ({ service, isMobile }) => {
       <div
         style={{
           fontSize: isMobile ? '1rem' : '1.1rem',
-          color: '#665b4c',
+          color: textLight,
           textAlign: 'center',
           lineHeight: '1.7',
           padding: isMobile ? '0 2px' : '0 10px',
           maxWidth: isMobile ? '100%' : '360px',
-          fontWeight: '400',
+          fontWeight: '500',
           opacity: hover ? 1 : 0.9,
           margin: isMobile ? '0 auto' : undefined,
           transform: hover ? 'translateY(-2px)' : 'translateY(0)',
@@ -224,72 +228,94 @@ const ServiceSection = () => {
   const width = useWindowWidth();
   const isMobile = width < 700;
 
+  const sand = '#c0a166';
+  const textDark = '#2c2415';
+  const background = '#ffffff';
+
   return (
     <section
       style={{
-        background: 'linear-gradient(135deg, #f7ecd3 0%, #fcf9ef 50%, #f5e8c8 100%)',
-        padding: isMobile ? '2rem 1.5vw' : '5rem 5vw',
-        fontFamily: 'Inter, Poppins, sans-serif',
-        marginBottom: '3rem',
+        background,
+        padding: isMobile ? '3rem 1.5rem' : '5rem 0',
+        fontFamily: 'Inter, Poppins, serif',
+        width: '100%',
         position: 'relative',
-        overflow: 'hidden',
+        overflow: 'hidden'
       }}
     >
-      {/* Decorative backgrounds */}
-      <div
-        style={{
-          position: 'absolute',
-          top: isMobile ? '-40px' : '-100px',
-          right: isMobile ? '-40px' : '-100px',
-          width: isMobile ? '120px' : '300px',
-          height: isMobile ? '120px' : '300px',
-          background: 'radial-gradient(circle, rgba(173,148,74,0.08) 0%, rgba(173,148,74,0) 70%)',
-          borderRadius: '50%',
-        }}
-      ></div>
-      <div
-        style={{
-          position: 'absolute',
-          bottom: isMobile ? '-90px' : '-150px',
-          left: isMobile ? '-90px' : '-150px',
-          width: isMobile ? '180px' : '400px',
-          height: isMobile ? '180px' : '400px',
-          background: 'radial-gradient(circle, rgba(173,148,74,0.05) 0%, rgba(173,148,74,0) 70%)',
-          borderRadius: '50%',
-        }}
-      ></div>
+      {/* Background decorations */}
+      <div style={{
+        position: 'absolute',
+        top: isMobile ? '-30px' : '-50px',
+        left: isMobile ? '-30px' : '-50px',
+        width: isMobile ? '120px' : '200px',
+        height: isMobile ? '120px' : '200px',
+        background: 'radial-gradient(circle, rgba(192,161,102,0.05) 0%, rgba(192,161,102,0) 70%)',
+        borderRadius: '50%'
+      }} />
+      
+      <div style={{
+        position: 'absolute',
+        bottom: isMobile ? '-70px' : '-100px',
+        right: isMobile ? '-70px' : '-100px',
+        width: isMobile ? '180px' : '300px',
+        height: isMobile ? '180px' : '300px',
+        background: 'radial-gradient(circle, rgba(44,36,21,0.03) 0%, rgba(44,36,21,0) 70%)',
+        borderRadius: '50%'
+      }} />
 
-      <div style={{ position: 'relative', zIndex: 1 }}>
+      <div style={{ 
+        position: 'relative', 
+        zIndex: 2,
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 2vw'
+      }}>
         <h2
           style={{
-            fontSize: isMobile ? '1.65rem' : '2.5rem',
-            marginBottom: isMobile ? '0.5rem' : '1rem',
+            fontSize: isMobile ? '1.9rem' : '2.5rem',
             fontWeight: '800',
-            color: '#ad944a',
+            color: textDark,
             textAlign: 'center',
             letterSpacing: '-0.5px',
-            textShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            marginBottom: isMobile ? '1rem' : '1.5rem',
+            lineHeight: '1.2',
+            position: 'relative'
           }}
         >
           What I Do — Services
-        </h2>
-        <div
-          style={{
-            width: isMobile ? '45px' : '80px',
+          <span style={{
+            position: 'absolute',
+            bottom: '-8px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '80px',
             height: '4px',
-            background: 'linear-gradient(90deg, #ad944a, #d4b85c)',
-            margin: isMobile ? '0 auto 2.1rem auto' : '0 auto 3rem auto',
-            borderRadius: '2px',
-            boxShadow: '0 2px 8px rgba(173, 148, 74, 0.2)',
-          }}
-        ></div>
+            background: 'linear-gradient(90deg, #c0a166, #d4b85c)',
+            borderRadius: '2px'
+          }}></span>
+        </h2>
+
+        <p style={{
+          color: textDark,
+          fontSize: isMobile ? '1rem' : '1.1rem',
+          textAlign: 'center',
+          lineHeight: '1.6',
+          marginBottom: isMobile ? '2rem' : '3rem',
+          fontWeight: '500',
+          maxWidth: '600px',
+          marginLeft: 'auto',
+          marginRight: 'auto'
+        }}>
+          Comprehensive international financial structuring and private wealth advisory services 
+          tailored to high-net-worth individuals and family offices.
+        </p>
+
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(350px, 1fr))',
             gap: isMobile ? '1.6rem' : '2.5rem',
-            maxWidth: '1300px',
-            margin: '0 auto',
           }}
         >
           {services.map((service, idx) => (

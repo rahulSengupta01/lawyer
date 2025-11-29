@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../index.css";
 
 const timelineRoles = [
-
   {
     label: "London UHNW Family Office:",
     details: [
@@ -15,20 +14,13 @@ const timelineRoles = [
       "Management of USD 200Million+ trust structures, international tax management, cross-border contentious &amp; non-contentious matters.",
     ],
   },
-
-  //   {
-  //   label: "Graphene Star Ltd (UK)",
-  //   details: [
-  //     "Strategic legal guidance, capital raising, IP protection, R&D contracts & negotiations.",
-  //   ],
-  // },
-    {
+  {
     label: "Graphene Star Ltd (UK):",
     details: [
       "Strategic legal guidance, capital raising, IP protection, R&amp;D contracts &amp; negotiations.",
     ],
   },
-    {
+  {
     label: "Previous Law Firms Chambers:",
     details: [
       "Stuart has worked at or provided consultancy services to the following law firms",
@@ -65,7 +57,7 @@ const ExperienceSection = () => {
         width: "100%",
         background: "linear-gradient(135deg, #fcf9ef 0%, #f8f4e8 100%)",
         padding: "5rem 0",
-        fontFamily: "Inter, Poppins, sans-serif",
+        fontFamily: "Inter, Poppins, serif",
         overflow: "hidden",
       }}
     >

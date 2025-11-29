@@ -5,45 +5,39 @@ const sand = '#c0a166';
 const darkBrown = '#2c2415';
 const mediumBrown = '#594e39';
 
-// Sort education by year (latest first)
+// Final structure as per user requirement
 const sortedEducation = [
   {
-    degree: 'STEP Trust & Estate Practitioner',
-    institution: 'Society of Trust and Estate Practitioners',
-    year: '2005',
-    endYear: 2005
-  },
-  {
-    degree: 'Bar Vocational Course',
-    institution: 'Inns of Court School of Law',
-    year: '1995-1996',
-    endYear: 1996
-  },
-  {
-    degree: 'Common Professional Exam',
-    institution: 'City University',
-    year: '1994-1995',
-    endYear: 1995
-  },
-  {
-    degree: 'Called to the Bar',
-    institution: 'Lincoln\'s Inn',
-    year: '1994',
-    endYear: 1994
+    degree: 'BEng (Hons)',
+    institution: "King's College London",
+    year: ''
   },
   {
     degree: 'MSc (Econ)',
     institution: 'London School of Economics',
-    year: '1993-1994',
-    endYear: 1994
+    year: ''
   },
   {
-    degree: 'BEng (Hons)',
-    institution: 'King\'s College London',
-    year: '1990-1993',
-    endYear: 1993
+    degree: 'Common Professional Exam',
+    institution: 'City University',
+    year: ''
+  },
+  {
+    degree: 'Bar Vocational Course',
+    institution: 'Inns of Court School of Law',
+    year: ''
+  },
+  {
+    degree: 'Called to the Bar',
+    institution: "Lincoln's Inn",
+    year: '1994'
+  },
+  {
+    degree: 'STEP Trust & Estate Practitioner',
+    institution: 'STEP',
+    year: '2005'
   }
-].sort((a, b) => b.endYear - a.endYear);
+];
 
 const EducationSection = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -52,7 +46,7 @@ const EducationSection = () => {
     <section style={{
       background: '#ffffff',
       padding: '5rem 0',
-      fontFamily: 'Inter, Poppins, sans-serif',
+      fontFamily: 'Inter, Poppins, serif',
       width: '100%',
       position: 'relative',
     }}>
@@ -110,17 +104,17 @@ const EducationSection = () => {
           <p style={{
             color: mediumBrown,
             fontSize: '1.2rem',
-            fontWeight: 400,
+            fontWeight: 500,
             maxWidth: '600px',
             margin: '0 auto',
             lineHeight: '1.6',
             opacity: 0.9,
           }}>
-            Professional qualifications and academic achievements in chronological order
+            Professional qualifications and academic achievements
           </p>
         </div>
 
-        {/* Education List - Latest First */}
+        {/* Education List */}
         <div style={{
           display: 'flex',
           flexDirection: 'column',
@@ -151,7 +145,7 @@ const EducationSection = () => {
               onMouseEnter={() => setHoveredItem(idx)}
               onMouseLeave={() => setHoveredItem(null)}
             >
-              {/* Timeline Indicator */}
+              {/* Timeline index */}
               <div style={{
                 width: '44px',
                 height: '44px',
@@ -186,7 +180,6 @@ const EducationSection = () => {
                     fontWeight: 700,
                     fontSize: '1.2rem',
                     marginBottom: '0.3rem',
-                    transition: 'all 0.3s ease',
                   }}>
                     {edu.degree}
                   </div>
@@ -204,42 +197,28 @@ const EducationSection = () => {
                   </div>
                 </div>
                 
-                {/* Year Badge */}
-                <div style={{
-                  color: sand,
-                  fontWeight: 700,
-                  fontSize: '0.95rem',
-                  background: 'rgba(192,161,102,0.1)',
-                  padding: '0.6rem 1rem',
-                  borderRadius: '8px',
-                  marginLeft: '1.5rem',
-                  flexShrink: 0,
-                  transition: 'all 0.3s ease',
-                  border: `1px solid rgba(192, 161, 102, 0.2)`,
-                  transform: hoveredItem === idx ? 'scale(1.05)' : 'scale(1)',
-                }}>
-                  {edu.year}
-                </div>
-              </div>
-
-              {/* Hover Accent */}
-              <div style={{
-                position: 'absolute',
-                right: '1.5rem',
-                top: '50%',
-                transform: hoveredItem === idx ? 'translateY(-50%)' : 'translateY(-50%) scale(0)',
-                opacity: hoveredItem === idx ? 1 : 0,
-                transition: 'all 0.3s ease',
-                color: sand,
-                fontSize: '1.2rem',
-              }}>
-                →
+                {/* Year (only shown if provided) */}
+                {edu.year && (
+                  <div style={{
+                    color: sand,
+                    fontWeight: 700,
+                    fontSize: '0.95rem',
+                    background: 'rgba(192,161,102,0.1)',
+                    padding: '0.6rem 1rem',
+                    borderRadius: '8px',
+                    marginLeft: '1.5rem',
+                    flexShrink: 0,
+                    border: `1px solid rgba(192, 161, 102, 0.2)`
+                  }}>
+                    {edu.year}
+                  </div>
+                )}
               </div>
             </div>
           ))}
         </div>
-        
-        {/* Footer - Fixed Alignment */}
+
+        {/* Footer */}
         <div style={{
           textAlign: 'center',
           marginTop: '3rem',
@@ -285,60 +264,6 @@ const EducationSection = () => {
           </div>
         </div>
       </div>
-
-      <style>
-        {`
-        @media (max-width: 768px) {
-          .education-container {
-            padding: 0 1rem;
-          }
-          
-          h2 {
-            font-size: 2.2rem !important;
-          }
-          
-          .education-item {
-            padding: 1.3rem 1.5rem !important;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1rem;
-          }
-          
-          .education-content {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1rem;
-            width: 100%;
-          }
-          
-          .year-badge {
-            align-self: flex-start;
-            margin-left: 0 !important;
-          }
-          
-          .timeline-indicator {
-            margin-right: 0 !important;
-            align-self: flex-start;
-          }
-        }
-
-        @media (max-width: 480px) {
-          h2 {
-            font-size: 1.8rem !important;
-          }
-          
-          .education-item {
-            padding: 1.2rem !important;
-          }
-          
-          .timeline-indicator {
-            width: 36px !important;
-            height: 36px !important;
-            font-size: 0.9rem !important;
-          }
-        }
-        `}
-      </style>
     </section>
   );
 };

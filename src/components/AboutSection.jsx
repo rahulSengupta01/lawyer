@@ -26,100 +26,210 @@ const AboutSection = () => {
   const width = useWindowWidth();
   const isMobile = width < 700;
 
+  const sand = '#c0a166';
+  const background = '#ffffff';
+  const textDark = '#2c2415';
+  const textLight = '#695a3c';
+
   return (
     <section
       style={{
-        background: '#fff',
-        padding: isMobile ? '2rem 4vw' : '4rem 5vw',
-        borderTop: '4px solid #eedcbe',
-        fontFamily: 'Inter, Poppins, sans-serif',
-        minHeight: '480px',
-        marginBottom: '2rem',
+        background,
+        padding: isMobile ? '3rem 1.5rem' : '5rem 0',
+        fontFamily: 'Inter, Poppins, serif',
+        width: '100%',
+        position: 'relative',
+        overflow: 'hidden'
       }}
     >
+      {/* Background decorations */}
+      <div style={{
+        position: 'absolute',
+        top: isMobile ? '-30px' : '-50px',
+        right: isMobile ? '-30px' : '-50px',
+        width: isMobile ? '120px' : '200px',
+        height: isMobile ? '120px' : '200px',
+        background: 'radial-gradient(circle, rgba(192,161,102,0.05) 0%, rgba(192,161,102,0) 70%)',
+        borderRadius: '50%'
+      }} />
+      
+      <div style={{
+        position: 'absolute',
+        bottom: isMobile ? '-70px' : '-100px',
+        left: isMobile ? '-70px' : '-100px',
+        width: isMobile ? '180px' : '300px',
+        height: isMobile ? '180px' : '300px',
+        background: 'radial-gradient(circle, rgba(44,36,21,0.03) 0%, rgba(44,36,21,0) 70%)',
+        borderRadius: '50%'
+      }} />
+
       <div
         style={{
           display: 'flex',
           flexDirection: isMobile ? 'column' : 'row',
-          alignItems: isMobile ? 'flex-start' : 'flex-start',
+          alignItems: isMobile ? 'center' : 'flex-start',
           justifyContent: 'center',
           maxWidth: '1200px',
           margin: '0 auto',
-          gap: isMobile ? '1.7rem' : '3vw',
+          padding: '0 2vw',
+          gap: isMobile ? '2.5rem' : '4rem',
+          position: 'relative',
+          zIndex: 2
         }}
       >
         {/* Left - Profile narrative */}
         <div style={{
-          flex: isMobile ? undefined : '1 1 52%',
-          minWidth: '240px',
-          marginRight: isMobile ? '0' : '2vw',
-          width: isMobile ? '100%' : undefined,
-          textAlign: isMobile ? 'center' : 'left'
+          flex: '1 1 55%',
+          textAlign: isMobile ? 'center' : 'left',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: isMobile ? 'center' : 'flex-start'
         }}>
           <h2 style={{
-            fontSize: isMobile ? '1.28rem' : '2.1rem',
-            fontWeight: '700',
-            marginBottom: isMobile ? '1.1rem' : '1.25rem',
-            color: '#c0a166',
+            fontSize: isMobile ? '1.9rem' : '2.5rem',
+            fontWeight: '800',
+            marginBottom: isMobile ? '1.5rem' : '2rem',
+            color: textDark,
+            lineHeight: '1.2',
+            position: 'relative',
+            width: '100%'
           }}>
             About SP One Consulting
+            <span style={{
+              position: 'absolute',
+              bottom: '-8px',
+              left: isMobile ? '50%' : '0',
+              transform: isMobile ? 'translateX(-50%)' : 'none',
+              width: '80px',
+              height: '4px',
+              background: 'linear-gradient(90deg, #c0a166, #d4b85c)',
+              borderRadius: '2px'
+            }}></span>
           </h2>
-          <p style={{
-            fontSize: isMobile ? '1rem' : '1.08rem',
-            color: '#5a5244',
-            lineHeight: '1.7',
-            marginBottom: isMobile ? '1.4rem' : '2rem',
+          
+          <div style={{
+            display: 'flex',
+            flexDirection: isMobile ? 'column' : 'row',
+            alignItems: 'center',
+            gap: isMobile ? '1.5rem' : '2rem',
+            width: '100%'
           }}>
-            Stuart has nearly 30 years of international legal and consulting experience, gained at the
-English Bar, global law firms, and senior in-house counsel roles.<br /><br />
-            Currently based in the
-UAE, he advises high-net-worth individuals, family businesses, and family offices on
-private wealth structuring, succession planning, asset protection and cross-border financial
-architecture.
-          </p>
-          <img
-            src={lawAboutImage}
-            alt="About SP One Consulting Portrait"
-            style={{
-              width: isMobile ? '135px' : '160px',
-              height: isMobile ? '135px' : '160px',
-              objectFit: 'cover',
-              borderRadius: '50%',
-              border: '3px solid #eedcbe',
-              boxShadow: '0 2px 10px rgba(224, 202, 158, 0.09)',
-              marginBottom: isMobile ? '1.1rem' : '1.5rem',
-            }}
-          />
+            <img
+              src={lawAboutImage}
+              alt="About SP One Consulting Portrait"
+              style={{
+                width: isMobile ? '140px' : '180px',
+                height: isMobile ? '140px' : '180px',
+                objectFit: 'cover',
+                borderRadius: '50%',
+                border: `4px solid ${sand}`,
+                boxShadow: '0 8px 32px rgba(192, 161, 102, 0.2)',
+                flexShrink: 0
+              }}
+            />
+            
+            <div>
+              <p style={{
+                fontSize: isMobile ? '1rem' : '1.1rem',
+                color: textLight,
+                lineHeight: '1.7',
+                marginBottom: isMobile ? '1rem' : '1.5rem',
+                fontWeight: '500',
+                textAlign: isMobile ? 'center' : 'left'
+              }}>
+                Stuart has nearly 30 years of international legal and consulting experience, gained at the
+                English Bar, global law firms, and senior in-house counsel roles.
+              </p>
+              <p style={{
+                fontSize: isMobile ? '1rem' : '1.1rem',
+                color: textLight,
+                lineHeight: '1.7',
+                fontWeight: '500',
+                textAlign: isMobile ? 'center' : 'left'
+              }}>
+                Currently based in the UAE, he advises high-net-worth individuals, family businesses, and family offices on
+                private wealth structuring, succession planning, asset protection and cross-border financial
+                architecture.
+              </p>
+            </div>
+          </div>
         </div>
+
         {/* Right - Expertise bullets */}
         <div style={{
-          flex: isMobile ? undefined : '1 1 39%',
-          background: '#fffbea',
-          borderRadius: '14px',
-          padding: isMobile ? '1.1rem 1rem' : '2rem 1.5rem',
-          boxShadow: '0 2px 18px #eedcbe19',
-          minWidth: '180px',
-          width: isMobile ? '100%' : undefined
+          flex: '1 1 45%',
+          background: '#fefcf7',
+          borderRadius: '20px',
+          padding: isMobile ? '2rem 1.5rem' : '2.5rem 2rem',
+          boxShadow: '0 8px 32px rgba(44, 36, 21, 0.12)',
+          border: '1px solid #f5f2eb',
+          position: 'relative'
         }}>
+          {/* Decorative quote mark */}
+          <div style={{
+            position: 'absolute',
+            top: '15px',
+            right: '20px',
+            fontSize: '3rem',
+            color: sand,
+            opacity: 0.1,
+            fontFamily: 'serif',
+            lineHeight: 1
+          }}>"</div>
+
           <h3 style={{
-            fontSize: isMobile ? '1rem' : '1.22rem',
-            color: '#ad944a',
-            fontWeight: '600',
-            marginBottom: isMobile ? '0.8rem' : '1.1rem',
-            textAlign: isMobile ? 'center' : 'left'
+            fontSize: isMobile ? '1.4rem' : '1.6rem',
+            color: textDark,
+            fontWeight: '700',
+            marginBottom: isMobile ? '1.5rem' : '2rem',
+            textAlign: 'center',
+            position: 'relative'
           }}>
             Key Expertise
+            <span style={{
+              position: 'absolute',
+              bottom: '-8px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '40px',
+              height: '2px',
+              background: 'linear-gradient(90deg, #c0a166, #d4b85c)',
+              borderRadius: '1px'
+            }}></span>
           </h3>
+          
           <ul style={{
-            color: '#6d5e43',
-            fontSize: isMobile ? '0.95rem' : '1.06rem',
-            listStyle: 'disc inside',
-            lineHeight: isMobile ? '1.75' : '2',
-            paddingLeft: '0'
+            color: textLight,
+            fontSize: isMobile ? '1rem' : '1.1rem',
+            listStyle: 'none',
+            lineHeight: '1.8',
+            paddingLeft: '0',
+            margin: 0
           }}>
             {expertiseList.map((item, idx) => (
-              <li key={idx} style={{ marginBottom: isMobile ? '0.15rem' : '0.3rem' }}>
-                {item}
+              <li key={idx} style={{ 
+                marginBottom: isMobile ? '0.8rem' : '1rem',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '0.75rem'
+              }}>
+                <div style={{
+                  background: 'linear-gradient(135deg, #c0a166, #d4b85c)',
+                  color: '#ffffff',
+                  borderRadius: '50%',
+                  width: '24px',
+                  height: '24px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontWeight: '700',
+                  fontSize: '0.8rem',
+                  flexShrink: 0,
+                  marginTop: '2px'
+                }}>
+                  ✓
+                </div>
+                <span style={{ fontWeight: '500' }}>{item}</span>
               </li>
             ))}
           </ul>

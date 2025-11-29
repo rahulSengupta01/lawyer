@@ -3,7 +3,7 @@ import '../index.css';
 import workImg from '../assets/work.jpg';
 
 const sand = '#c0a166';
-const background = '#ffffff';
+const background = '#fefcf7';
 const textDark = '#2c2415';
 const textLight = '#695a3c';
 const processPhases = [
@@ -30,7 +30,7 @@ const HowIWorkSection = () => {
   return (
     <section
       style={{
-        background,
+        background: 'linear-gradient(135deg, #fefcf7 0%, #fcf9ef 50%, #faf6e9 100%)',
         padding: isMobile ? '3rem 1.5rem' : '5rem 0',
         fontFamily: 'Inter, Poppins, serif',
         width: '100%',
@@ -132,7 +132,8 @@ const HowIWorkSection = () => {
             <span style={{
               position: 'absolute',
               bottom: '-8px',
-              left: 0,
+              left: isMobile ? '50%' : '0',
+              transform: isMobile ? 'translateX(-50%)' : 'none',
               width: '80px',
               height: '4px',
               background: 'linear-gradient(90deg, #c0a166, #d4b85c)',
@@ -141,8 +142,9 @@ const HowIWorkSection = () => {
           </h2>
 
           <blockquote style={{
-            borderLeft: `4px solid ${sand}`,
-            background: '#fefcf7',
+            borderLeft: isMobile ? 'none' : `4px solid ${sand}`,
+            borderTop: isMobile ? `4px solid ${sand}` : 'none',
+            background: '#ffffff',
             fontSize: isMobile ? '1rem' : '1.15rem',
             color: textDark,
             lineHeight: '1.7',
@@ -153,10 +155,10 @@ const HowIWorkSection = () => {
             width: '100%',
             boxShadow: '0 4px 20px rgba(44,36,21,0.08)',
             borderRadius: '12px',
-            border: '1px solid #f5f2eb',
+            border: isMobile ? '1px solid #f5f2eb' : '1px solid #f5f2eb',
             position: 'relative'
           }}>
-            "I provide clear, pragmatic, confidential internationally informed advice focused on , commercial sense, and efficient execution."
+            "I provide clear, pragmatic, confidential internationally informed advice focused on commercial sense, and efficient execution."
             <div style={{
               position: 'absolute',
               top: '20px',
@@ -184,7 +186,8 @@ const HowIWorkSection = () => {
               <span style={{
                 position: 'absolute',
                 bottom: '-6px',
-                left: 0,
+                left: isMobile ? '50%' : '0',
+                transform: isMobile ? 'translateX(-50%)' : 'none',
                 width: '40px',
                 height: '2px',
                 background: 'linear-gradient(90deg, #c0a166, #d4b85c)',
@@ -274,10 +277,11 @@ const HowIWorkSection = () => {
           <div style={{
             marginTop: '2rem',
             padding: '1.5rem',
-            background: '#f8f6f2',
+            background: '#ffffff',
             borderRadius: '12px',
             border: '1px solid #f0ece3',
-            width: '100%'
+            width: '100%',
+            boxShadow: '0 4px 20px rgba(44,36,21,0.05)'
           }}>
             <p style={{
               color: textLight,

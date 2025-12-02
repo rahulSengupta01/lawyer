@@ -17,7 +17,7 @@ const timelineRoles = [
   {
     label: "Graphene Star Ltd (UK):",
     details: [
-      "Strategic legal guidance, capital raising, IP protection, R&D contracts &amp; negotiations.",
+      "Strategic legal guidance, capital raising, IP protection, R amd D contracts & negotiations.",
     ],
   },
   {
@@ -201,6 +201,7 @@ const ExperienceSection = () => {
               </div>
               <ul
                 style={{
+                  listStyle: "none",
                   color: "#48413a",
                   fontSize: "1.08rem",
                   lineHeight: "1.75",
@@ -436,6 +437,7 @@ const ExperienceSection = () => {
                   >
                     <ul
                       style={{
+                        listStyle: "none",
                         color: "#665b4c",
                         fontSize: "1rem",
                         lineHeight: "1.6",

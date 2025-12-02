@@ -11,13 +11,13 @@ const timelineRoles = [
   {
     label: "New York/Monaco HNW Family Office:",
     details: [
-      "Management of USD 200Million+ trust structures, international tax management, cross-border contentious &amp; non-contentious matters.",
+      "Management of USD 200Million+ trust structures, international tax management, cross-border contentious & non-contentious matters.",
     ],
   },
   {
     label: "Graphene Star Ltd (UK):",
     details: [
-      "Strategic legal guidance, capital raising, IP protection, R&amp;D contracts &amp; negotiations.",
+      "Strategic legal guidance, capital raising, IP protection, R&D contracts &amp; negotiations.",
     ],
   },
   {

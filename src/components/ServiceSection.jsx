@@ -18,7 +18,7 @@ const services = [
   {
     title: "International Law & Cross-Border Structuring",
     img: internationalImg,
-    description: "Guidance on UAE (DIFC/ADGM), Jersey, Guernsey, Cayman Islands, BVI, Singapore, UK & US laws."
+    description: "Guidance on UAE (DIFC/ADGM), Jersey, Guernsey, Cayman Islands, BVI, UK & US laws."
   },
   {
     title: "Taxation & Multi-Jurisdictional Planning",

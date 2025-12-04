@@ -21,7 +21,7 @@ const timelineRoles = [
     ],
   },
   {
-    label: "Previous Law Firms Chambers:",
+    label: "Previous Law:",
     details: [
       "Stuart has worked at or provided consultancy services to the following law firms",
       "Al Tamimi & Co, (Dubai), Taylor Wessing(London), Ogier(Jersey), Walkers(London/Cayman), Collas Crill(Jersey), Mourant(Guernsey).",
@@ -35,10 +35,10 @@ const recentExperience = [
   "Wealth restructuring for a major Middle Eastern family with multi-jurisdictional tax/litigation issues.",
   "Structuring for a globally prominent individual with complex tax and political considerations.",
   "Advising UAE real estate leader on JV structuring for Dubai property development.",
-  "Advisory to UAE Federal Government on Trusts Law and Family Business Law.",
-  "Advisory to major UAE family on restructuring of UK property portfolio.",
-  "Governance advisory for Saudi G20 ecological foundation.",
-  "Legislative advisory to ADGM Registration Authority.",
+  "Advising UAE Federal Government on Trusts Law and Family Business Law.",
+  "Advising to major UAE family on restructuring of UK property portfolio.",
+  "Governance advice for Saudi G20 ecological foundation.",
+  "Legislative advice to ADGM Registration Authority.",
 ];
 
 const sand = "#c0a166";
@@ -70,11 +70,12 @@ const ExperienceSection = () => {
           width: "300px",
           height: "300px",
           borderRadius: "50%",
-          background: "linear-gradient(135deg, rgba(192, 161, 102, 0.05) 0%, rgba(192, 161, 102, 0.1) 100%)",
+          background:
+            "linear-gradient(135deg, rgba(192, 161, 102, 0.05) 0%, rgba(192, 161, 102, 0.1) 100%)",
           zIndex: 0,
         }}
       ></div>
-      
+
       <div
         style={{
           position: "absolute",
@@ -83,7 +84,8 @@ const ExperienceSection = () => {
           width: "200px",
           height: "200px",
           borderRadius: "50%",
-          background: "linear-gradient(135deg, rgba(192, 161, 102, 0.03) 0%, rgba(192, 161, 102, 0.08) 100%)",
+          background:
+            "linear-gradient(135deg, rgba(192, 161, 102, 0.03) 0%, rgba(192, 161, 102, 0.08) 100%)",
           zIndex: 0,
         }}
       ></div>
@@ -102,14 +104,43 @@ const ExperienceSection = () => {
         }
 
         @media (max-width: 480px) {
-          .left-content h2 {
+          .experience-main-title {
             font-size: 1.9rem !important;
           }
         }
       `}
       </style>
 
-      {/* Section Content */}
+      {/* MAIN TITLE (TOP OF COMPONENT) */}
+<div
+  style={{
+    width: "90%",
+    maxWidth: "1400px",
+    margin: "0 auto 2.5rem auto",
+    position: "relative",
+    zIndex: 2,
+    display: "flex",
+    justifyContent: "center",
+  }}
+>
+  <h2
+    className="experience-main-title"
+    style={{
+      color: sand,
+      fontWeight: 800,
+      fontSize: "2.6rem",
+      margin: 0,
+      letterSpacing: "-0.5px",
+      lineHeight: "1.2",
+      textAlign: "center",
+    }}
+  >
+    Experience &amp; Credentials
+  </h2>
+</div>
+
+
+      {/* TWO COLUMNS UNDER THE SAME HEADER */}
       <div
         className="layout-wrapper"
         style={{
@@ -123,7 +154,7 @@ const ExperienceSection = () => {
           position: "relative",
         }}
       >
-        {/* LEFT COLUMN - Experience & Credentials */}
+        {/* LEFT COLUMN - Recent Experience */}
         <div
           className="left-content"
           style={{
@@ -157,129 +188,80 @@ const ExperienceSection = () => {
                 left: "0",
                 width: "120px",
                 height: "120px",
-                background: "linear-gradient(135deg, rgba(192, 161, 102, 0.03) 50%, transparent 50%)",
+                background:
+                  "linear-gradient(135deg, rgba(192, 161, 102, 0.03) 50%, transparent 50%)",
                 borderRadius: "24px 0 0 0",
               }}
             ></div>
 
-            <h2
+            {/* LEFT SUBTITLE */}
+            <div
               style={{
-                color: sand,
-                fontWeight: 800,
-                fontSize: "2.4rem",
-                marginBottom: "2rem",
-                letterSpacing: "-0.5px",
-                lineHeight: "1.2",
-                position: "relative",
+                display: "flex",
+                alignItems: "center",
+                marginBottom: "1.5rem",
               }}
             >
-              Experience & Credentials
-            </h2>
-
-            {/* RECENT EXPERIENCE */}
-            <div style={{ marginBottom: "2.5rem", position: "relative" }}>
-              <div style={{ display: "flex", alignItems: "center", marginBottom: "1.5rem" }}>
-                <div
-                  style={{
-                    width: "4px",
-                    height: "24px",
-                    background: "linear-gradient(to bottom, #c0a166, #d4b85c)",
-                    borderRadius: "2px",
-                    marginRight: "12px",
-                  }}
-                ></div>
-                <h4
-                  style={{
-                    color: sand,
-                    fontWeight: 700,
-                    fontSize: "1.4rem",
-                    margin: 0,
-                  }}
-                >
-                  Recent Experience
-                </h4>
-              </div>
-              <ul
+              <div
                 style={{
-                  listStyle: "none",
-                  color: "#48413a",
-                  fontSize: "1.08rem",
-                  lineHeight: "1.75",
-                  paddingLeft: "0",
+                  width: "4px",
+                  height: "24px",
+                  background: "linear-gradient(to bottom, #c0a166, #d4b85c)",
+                  borderRadius: "2px",
+                  marginRight: "12px",
+                }}
+              ></div>
+              <h3
+                style={{
+                  color: sand,
+                  fontWeight: 700,
+                  fontSize: "1.4rem",
                   margin: 0,
                 }}
               >
-                {recentExperience.map((exp, idx) => (
-                  <li 
-                    key={idx} 
-                    style={{ 
-                      marginBottom: "1rem",
-                      paddingLeft: "1.5rem",
-                      position: "relative",
+                Recent Experience
+              </h3>
+            </div>
+
+            <ul
+              style={{
+                listStyle: "none",
+                color: "#48413a",
+                fontSize: "1.08rem",
+                lineHeight: "1.75",
+                paddingLeft: "0",
+                margin: 0,
+              }}
+            >
+              {recentExperience.map((exp, idx) => (
+                <li
+                  key={idx}
+                  style={{
+                    marginBottom: "1rem",
+                    paddingLeft: "1.5rem",
+                    position: "relative",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      left: "0",
+                      top: "12px",
+                      width: "8px",
+                      height: "8px",
+                      borderRadius: "50%",
+                      background: sand,
+                      opacity: 0.7,
                     }}
-                  >
-                    <div
-                      style={{
-                        position: "absolute",
-                        left: "0",
-                        top: "12px",
-                        width: "8px",
-                        height: "8px",
-                        borderRadius: "50%",
-                        background: sand,
-                        opacity: 0.7,
-                      }}
-                    ></div>
-                    {exp}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* PROFESSIONAL EXPERTISE */}
-            <div style={{ position: "relative" }}>
-              <div style={{ display: "flex", alignItems: "center", marginBottom: "1.5rem" }}>
-                <div
-                  style={{
-                    width: "4px",
-                    height: "24px",
-                    background: "linear-gradient(to bottom, #c0a166, #d4b85c)",
-                    borderRadius: "2px",
-                    marginRight: "12px",
-                  }}
-                ></div>
-                <h4
-                  style={{
-                    color: sand,
-                    fontWeight: 700,
-                    fontSize: "1.4rem",
-                    margin: 0,
-                  }}
-                >
-                  Professional Expertise
-                </h4>
-              </div>
-              <p
-                style={{
-                  color: "#665b4c",
-                  fontSize: "1.08rem",
-                  lineHeight: "1.7",
-                  margin: 0,
-                  fontWeight: 500,
-                  background: "linear-gradient(135deg, #fef9ec 0%, #fdf6e7 100%)",
-                  padding: "1.5rem",
-                  borderRadius: "12px",
-                  border: "1px solid #f0e6d3",
-                }}
-              >
-                Click on the career timeline items to explore detailed experience
-                and accomplishments from each professional role.
-              </p>
-            </div>
+                  ></div>
+                  {exp}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* RIGHT COLUMN - Career Timeline Only */}
+        {/* RIGHT COLUMN - Other Career Highlights (timeline) */}
         <div
           className="right-content"
           style={{
@@ -290,8 +272,7 @@ const ExperienceSection = () => {
             zIndex: 3,
           }}
         >
-          {/* Career Timeline Section */}
-          <div 
+          <div
             className="timeline-section"
             style={{
               background: "linear-gradient(135deg, #ffffff 0%, #fefcf5 100%)",
@@ -306,19 +287,35 @@ const ExperienceSection = () => {
             }}
           >
             <div style={{ position: "relative", marginBottom: "2.5rem" }}>
-              <h3
+              <div
                 style={{
-                  color: sand,
-                  fontWeight: 800,
-                  fontSize: "1.6rem",
-                  marginBottom: "1rem",
-                  textAlign: "left",
-                  position: "relative",
-                  display: "inline-block",
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "0.75rem",
                 }}
               >
-                Career Timeline
-              </h3>
+                <div
+                  style={{
+                    width: "4px",
+                    height: "24px",
+                    background:
+                      "linear-gradient(90deg, #c0a166, #d4b85c)",
+                    borderRadius: "2px",
+                    marginRight: "12px",
+                  }}
+                ></div>
+                <h3
+                  style={{
+                    color: sand,
+                    fontWeight: 800,
+                    fontSize: "1.6rem",
+                    margin: 0,
+                    textAlign: "left",
+                  }}
+                >
+                  Other Career Highlights
+                </h3>
+              </div>
               <div
                 style={{
                   width: "60px",
@@ -339,7 +336,8 @@ const ExperienceSection = () => {
                   top: "0",
                   bottom: "0",
                   width: "2px",
-                  background: "linear-gradient(to bottom, #c0a166, #d4b85c, #e8dfd1)",
+                  background:
+                    "linear-gradient(to bottom, #c0a166, #d4b85c, #e8dfd1)",
                   zIndex: 1,
                 }}
               ></div>
@@ -363,10 +361,12 @@ const ExperienceSection = () => {
                         ? `2px solid ${sand}`
                         : "2px solid #f0e6d3",
                     overflow: "hidden",
-                    transition: "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                    transition:
+                      "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
                     position: "relative",
                     zIndex: 2,
-                    transform: openDropdown === idx ? "translateX(8px)" : "none",
+                    transform:
+                      openDropdown === idx ? "translateX(8px)" : "none",
                   }}
                 >
                   {/* Timeline dot */}
@@ -380,7 +380,9 @@ const ExperienceSection = () => {
                       height: "12px",
                       borderRadius: "50%",
                       background: openDropdown === idx ? sand : "#e8dfd1",
-                      border: `2px solid ${openDropdown === idx ? sand : "#ffffff"}`,
+                      border: `2px solid ${
+                        openDropdown === idx ? sand : "#ffffff"
+                      }`,
                       zIndex: 3,
                       transition: "all 0.3s ease",
                     }}
@@ -415,7 +417,8 @@ const ExperienceSection = () => {
                           openDropdown === idx
                             ? "rotate(180deg)"
                             : "rotate(0deg)",
-                        transition: "0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                        transition:
+                          "0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
                         color: sand,
                         flexShrink: 0,
                       }}
@@ -428,11 +431,13 @@ const ExperienceSection = () => {
                     style={{
                       maxHeight: openDropdown === idx ? "300px" : "0",
                       opacity: openDropdown === idx ? 1 : 0,
-                      padding: openDropdown === idx
-                        ? "0 1.5rem 1.5rem 2.8rem"
-                        : "0 1.5rem",
+                      padding:
+                        openDropdown === idx
+                          ? "0 1.5rem 1.5rem 2.8rem"
+                          : "0 1.5rem",
                       overflow: "hidden",
-                      transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                      transition:
+                        "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
                     }}
                   >
                     <ul
@@ -446,9 +451,9 @@ const ExperienceSection = () => {
                       }}
                     >
                       {role.details.map((detail, i) => (
-                        <li 
-                          key={i} 
-                          style={{ 
+                        <li
+                          key={i}
+                          style={{
                             marginBottom: "0.75rem",
                             paddingLeft: "0",
                             position: "relative",

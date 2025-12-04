@@ -172,6 +172,7 @@ const ContactSection = () => {
             </div>
             
 {/* Phone Row */}
+{/* Phone/Whatsapp Row */}
 <div style={{
   display: 'flex',
   alignItems: 'center',
@@ -183,47 +184,16 @@ const ContactSection = () => {
     background: 'linear-gradient(135deg, #c0a166, #d4b85c)',
     color: '#ffffff',
     borderRadius: '12px',
-    width: '50px',
+    width: '70px',
     height: '50px',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     fontSize: '1.2rem',
     boxShadow: '0 4px 16px rgba(192,161,102,0.3)',
     flexShrink: 0
   }}>
     <FaPhone />
-  </div>
-  <span style={{
-    color: textDark,
-    fontSize: isMobile ? '1rem' : '1.1rem',
-    fontWeight: 600
-  }}>
-    Phone: +971 55177 9203
-  </span>
-</div>
-
-{/* WhatsApp Row */}
-<div style={{
-  display: 'flex',
-  alignItems: 'center',
-  gap: '1.2rem',
-  padding: '1rem 0',
-  borderBottom: '1px solid #f0ece3'
-}}>
-  <div style={{
-    background: 'linear-gradient(135deg, #c0a166, #d4b85c)',
-    color: '#ffffff',
-    borderRadius: '12px',
-    width: '50px',
-    height: '50px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '1.2rem',
-    boxShadow: '0 4px 16px rgba(192,161,102,0.3)',
-    flexShrink: 0
-  }}>
     <FaWhatsapp />
   </div>
   <span style={{
@@ -231,7 +201,7 @@ const ContactSection = () => {
     fontSize: isMobile ? '1rem' : '1.1rem',
     fontWeight: 600
   }}>
-    WhatsApp: +971 55177 9203
+    Phone/Whatsapp: +971 55177 9203
   </span>
 </div>
 

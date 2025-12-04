@@ -17,7 +17,7 @@ const timelineRoles = [
   {
     label: "Graphene Star Ltd (UK):",
     details: [
-      "Strategic legal guidance, capital raising, IP protection, R and D contracts & negotiations.",
+      "Strategic legal guidance, capital raising, IP protection, R&D contracts & negotiations.",
     ],
   },
   {

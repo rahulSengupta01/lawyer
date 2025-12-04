@@ -5,7 +5,7 @@ const timelineRoles = [
   {
     label: "London UHNW Family Office:",
     details: [
-      "Restructuring of USD 2Billon+ wealth, succession and tax planning, trust /company restructuring, real estate development and litigation management and strategy, charity formation.",
+      "Restructuring of USD 2Billon+ wealth, succession and tax planning, trust /company restructuring, real estate development , litigation management and strategy, charity formation.",
     ],
   },
   {

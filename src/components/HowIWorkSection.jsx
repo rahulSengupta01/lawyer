@@ -141,23 +141,28 @@ const HowIWorkSection = () => {
             }}></span>
           </h2>
 
-          <blockquote style={{
-            borderLeft: isMobile ? 'none' : `4px solid ${sand}`,
-            borderTop: isMobile ? `4px solid ${sand}` : 'none',
-            background: '#ffffff',
-            fontSize: isMobile ? '1rem' : '1.15rem',
-            color: textDark,
-            lineHeight: '1.7',
-            fontStyle: 'italic',
-            padding: isMobile ? '1.2rem 1rem 1.2rem 1.3rem' : '2rem 2rem 2rem 1.8rem',
-            marginBottom: '2.5rem',
-            marginTop: 0,
-            width: '100%',
-            boxShadow: '0 4px 20px rgba(44,36,21,0.08)',
-            borderRadius: '12px',
-            border: isMobile ? '1px solid #f5f2eb' : '1px solid #f5f2eb',
-            position: 'relative'
-          }}>
+<blockquote style={{
+  borderLeft: isMobile ? 'none' : `4px solid ${sand}`,
+  borderTop: isMobile ? `4px solid ${sand}` : 'none',
+  background: '#ffffff',
+  fontSize: isMobile ? '1rem' : '1.15rem',
+  color: textDark,
+  lineHeight: '1.7',
+  fontStyle: 'italic',
+  padding: isMobile ? '1.2rem 1rem 1.2rem 1.3rem' : '2rem 2rem 2rem 1.8rem',
+  marginBottom: '2.5rem',
+  marginTop: 0,
+
+  // ⭐️ NEW FIX: shift left slightly on desktop only
+  marginLeft: isMobile ? '0' : '-1rem',
+
+  width: '100%',
+  boxShadow: '0 4px 20px rgba(44,36,21,0.08)',
+  borderRadius: '12px',
+  border: '1px solid #f5f2eb',
+  position: 'relative'
+}}>
+
             "I provide clear, pragmatic, confidential internationally informed advice focused on commercial sense, and efficient execution."
             <div style={{
               position: 'absolute',

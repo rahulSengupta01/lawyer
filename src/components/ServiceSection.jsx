@@ -283,7 +283,7 @@ const ServiceSection = () => {
             position: 'relative'
           }}
         >
-          What I Do — Services
+          What We Do — Services
           <span style={{
             position: 'absolute',
             bottom: '-8px',

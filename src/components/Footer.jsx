@@ -86,7 +86,7 @@ const Footer = () => {
             fontSize: isMobile ? '0.9rem' : '1rem',
             opacity: 0.9
           }}>
-            Independent consulting practice of Stuart [Surname]
+            Independent consulting practice of Stuart Pryke
           </div>
         </div>
 

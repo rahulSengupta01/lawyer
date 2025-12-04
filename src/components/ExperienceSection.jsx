@@ -38,7 +38,7 @@ const recentExperience = [
   "Advising UAE Federal Government on Trusts Law and Family Business Law.",
   "Advising to major UAE family on restructuring of UK property portfolio.",
   "Governance advice for Saudi G20 ecological foundation.",
-  "Legislative advice to ADGM Registration Authority.",
+  "Legislative advice to ADGM Registration Authority .",
 ];
 
 const sand = "#c0a166";

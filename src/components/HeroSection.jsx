@@ -85,33 +85,6 @@ structures, and private wealth planning across the Middle East, (including UAE),
 Europe, (including UK), USA, and leading offshore financial centres (such as Jersey and the
 Cayman Islands).
           </p>
-          <a
-            href="#contact"
-            style={{
-              display: 'inline-block',
-              background: 'linear-gradient(135deg, #c0a166, #d4b85c)',
-              color: 'white',
-              fontWeight: '600',
-              padding: isMobile ? '0.7rem 1.4rem' : '0.85rem 2rem',
-              borderRadius: '8px',
-              textDecoration: 'none',
-              boxShadow: '0 4px 16px rgba(192, 161, 102, 0.3)',
-              fontSize: isMobile ? '1rem' : '1.08rem',
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-            }}
-            onMouseOver={(e) => {
-              e.target.style.transform = 'translateY(-2px)';
-              e.target.style.boxShadow = '0 6px 20px rgba(192, 161, 102, 0.4)';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.transform = 'translateY(0)';
-              e.target.style.boxShadow = '0 4px 16px rgba(192, 161, 102, 0.3)';
-            }}
-          >
-            Request a Consultation
-          </a>
         </div>
         {/* Right Side - Image */}
         <div

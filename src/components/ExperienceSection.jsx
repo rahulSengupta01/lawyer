@@ -21,7 +21,7 @@ const timelineRoles = [
     ],
   },
   {
-    label: "Previous Law Firms/chambers:",
+    label: "Previous Law Firms/Chambers:",
     details: [
       "Stuart has worked at or provided consultancy services to the following law firms:",
       [
